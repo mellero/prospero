@@ -1,2 +1,0 @@
-all:
-	cd components/ && make

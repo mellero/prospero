@@ -1,0 +1,184 @@
+/*********** COMMON ***************/
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;400;700&display=swap');
+
+body header {
+    height: 3.5em;
+}
+
+.brand {
+    font-family: 'Averia Serif Libre', cursive;
+}
+
+img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.fixed {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+
+/* ============== NAV ================ */
+// Remove :focus box/outline //
+a.navbar-item:focus {
+    box-shadow: none;  
+    outline: none;
+}
+
+#signup {
+    background-color: $color-highlight;   
+    margin-left: auto;
+    margin-right: 0;
+}
+
+nav.navbar.is-dark .navbar-start > a.navbar-item:hover, 
+nav.navbar.is-dark .navbar-start > a.navbar-item:focus, 
+#signup:hover,
+#signup:focus {
+    background-color: $color-highlight; 
+}
+
+#search-icon .button:hover {
+    background-color: $color-white-grey;
+}
+/* ============ END NAV ================ */
+
+.welcome {
+    background-color: $color-white-grey;
+    color: $color-highlight;
+
+    .fas.fa-5x.fa-dungeon {
+        color: $color-highlight;
+    }
+
+    .title, .heading {
+        color: $color-highlight;
+        text-transform: uppercase;
+    }
+}
+
+/* ============  PANEL(S) ============== */
+.expand i,
+.collapse i {
+    color: $color-panel-fg;
+}
+
+.expand a.expand-collapse:hover,
+.collapse a.expand-collapse:hover {
+    background-color: $color-panel-bg;
+}
+
+.expand {
+    display: block;
+}
+
+.collapse {
+    display: none;
+}
+
+.showcase-nav {
+    background:$color-panel-bg;
+    margin: 0;
+    padding: 2em 2em 2em 2.5em;
+
+    &.no-outer {
+        height: 100vh;
+        overflow: unset;
+    }
+    
+    a:hover {
+        background-color: $color-primary;
+    }
+
+    .menu-list a.is-active {
+        background: $color-panel-hl;
+    }
+
+    .menu-list a.is-active:hover {
+        background: $color-panel-hl;
+    }
+
+    .menu-list a:hover {
+        background-color: $color-panel-hover;
+    }
+
+    
+}
+
+.showcase-results {
+    display: grid;
+}
+
+.panel {
+    background: $color-panel-bg;
+}
+
+aside.menu {
+    position: sticky;
+    top: 5em;
+
+    a.menu-item {
+        color: $color-primary;
+        text-decoration: none;
+    }
+
+    a.menu-item:hover {
+        background-color: $color-panel-bg;
+    }
+
+    p.menu-label {
+        text-align: start;
+    }
+    
+    hr {
+        background: $color-panel-hl;
+    }
+
+    .menu-label button {
+        background-color: $color-panel-bg;
+        border: none;
+        color: $color-primary;
+    }
+}
+/* =========== END PANEL(S) ============= */
+
+button.add-to-cart {
+    background-color: $color-champagne;
+}
+
+.add-to-cart:hover {
+    background-color: darken($color-champagne, 10%);
+}
+
+/* ============ FOOTER ============== */
+.footer {
+    background-color: $color-white-grey;
+    color: $color-primary;
+}
+
+.footer hr {
+    background-color: $color-highlight;
+}
+
+.footer .columns {
+    margin: auto;
+    width: 50vw;
+}
+
+.footer .column {
+    text-align: center;
+}
+
+.footer .content a {
+    color: $color-primary;
+}
+
+.footer .content a:hover {
+    color: $color-highlight;
+}
+/* =========== END FOOTER ============ */
+/*********** END COMMON ***************/

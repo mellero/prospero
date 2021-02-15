@@ -1,0 +1,55 @@
+/************* LANDING ***************/
+article.level {
+    background: $color-primary;
+}
+
+.hero-body .container.box {
+    background: $color-primary;
+    text-align: center;
+    text-transform: uppercase;
+
+    .title, .subtitle {
+        color: $color-off-white;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-arrow {
+    align-self: center;
+    color: $color-off-white;
+    position: absolute;
+    z-index: 1;
+
+    button {
+        background: none;
+        border: none;
+        color: $color-off-white;
+        text-decoration: none;
+    }
+
+    button:hover {
+        color: $color-highlight;
+        cursor: pointer;
+    }
+
+    &.hero-right-arrow {
+        right: 1em;
+    }
+    
+    &.hero-left-arrow {
+        left: 1em;
+    }
+}
+
+.main-article {
+    background-color: $color-highlight; 
+
+    .columns {
+        height: inherit;
+    }    
+}
+
+/*********** END LANDING ***************/

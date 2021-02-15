@@ -1,0 +1,143 @@
+/************* RESULTS ****************/
+/* ============== Results Panel ============= */
+.outer {
+    display: inline-block;
+    height: 100%;
+    background-color: $color-panel-bg;
+    padding-bottom: 5em;
+    width: 100%;
+}
+
+.showcase-nav {
+    position: sticky;
+    top: 3.5em;
+    height: 90vh;
+    overflow-y: auto;
+
+    button.rating {
+        color: $color-primary;
+        background-color: $color-off-white;
+        border: none;
+    }
+
+    button.rating:hover {
+        .fa-star {
+            font-size: medium;
+        }
+    }
+
+    button.button:focus:not(:active) {
+        box-shadow: none;  
+        outline: none;
+    }
+
+    .fa-star {
+        font-size: small;
+    }
+
+    .fa-star:hover {
+        font-size: medium;
+    }
+}
+
+.expand i,
+.collapse i {
+    color: $color-panel-fg;
+}
+
+.expand a.expand-collapse:hover,
+.collapse a.expand-collapse:hover {
+    background-color: $color-panel-bg;
+}
+
+.expand {
+    display: block;
+}
+
+.collapse {
+    display: none;
+}
+
+.price-range {
+    font-size: small;
+}
+
+
+
+/* ============ End Results Panel ============= */
+
+
+/* ================ Sort Bar ================ */
+.sort-menu-bar {
+    color: $color-off-white;
+    display: contents;
+    height: 10vh;
+}
+
+.sort-bar-container {
+    background-color: $color-primary;
+}
+
+.dropdown-content {
+    cursor: pointer;
+}
+
+.results, .results strong {
+    color: $color-off-white;
+}
+
+.pages.pagination-link, 
+.pages.pagination-ellipsis,
+.pages.pagination-next,
+.pages.pagination-previous {
+    color: $color-off-white;
+}
+
+.pages.pagination-link.is-current {
+    border: $color-highlight;
+    background-color: $color-highlight;
+}
+/* =============== End Sort Bar ============= */
+
+/* =============== Result Card ============== */
+.card-info {
+    display: grid;
+    // grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "head head head"
+        "price cart cart"
+        "null rate rate";
+}
+
+.card-heading {
+    font-size: medium;
+    font-weight: 700;
+    grid-area: head;
+}
+
+a.img-link {
+    color: $color-primary;
+}
+
+.card-price {
+    font-size: x-large;
+    grid-area: price;
+}
+
+.card-cart {
+    grid-area: cart;
+    justify-self: end;
+}
+
+.card-ratings {
+    grid-area: rate;
+    justify-self: end;
+}
+
+.filter-price {
+    display: flex;
+    flex-direction: column;
+}
+/* ============= End Result Card ============ */
+/*********** END RESULTS ***************/
+
