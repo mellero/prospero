@@ -1,25 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ResultCard from '../common/resultCard'
 import ResultsPanel from './resultsPanel'
 import SortBar from './sortBar'
-import products from '../../../static/productList'
 import { prices } from '../../../static/filter'
 
 /**
  * Main Page Container for Results. Wrapper includes ResultsPanel, SortBar and all results 
  */
-export default function ResultsMain({ params = [] }) {
-    let productsFound 
+export default function ResultsMain({ productsFound = [] }) {
+    /* Result rows, containing up to 3 ResultCards each */
+    const [results, setResults] = useState(<div></div>)
+    /* Number of total results, once sorted/filtered */
+    const [numResults, setNumResults] = useState(0)
+    /* Current filter settings */
     const [filter, setFilter] = useState({ price: prices.all, rating: 1 })
+    /* Current sort settings */
     const [sort, setSort] = useState({ sortFn: null })
-    
-    /* If no search parameters, return entire product array */
-    if (!params)    productsFound = products
-    else            productsFound = searchProducts(params)
-    /* Get Filters from side bar, then sort from sort bar */
-    let filtered = getFiltered(productsFound, filter)
-    let sorted = getSorted(filtered, sort)
-    let results = getMatchingProducts(sorted)
+
+    /* Assign proper values to state once correct product list is given.
+     * Fires if dependencies are changed
+     */
+    useEffect(() => {
+        const filtered = getFiltered(productsFound, filter)
+        const sorted = getSorted(filtered, sort)
+        setNumResults(sorted.length)
+        setResults(getMatchingProducts(sorted))
+    }, [productsFound, filter, sort])
 
     return (
         <main className="pt-3 main-article">
@@ -36,7 +42,7 @@ export default function ResultsMain({ params = [] }) {
                     <div className="p-3 block sort-bar-container">
                         <SortBar 
                             changeSortFn={(sortObj) => setSort(sortObj)}
-                            numResults={sorted.length}
+                            numResults={numResults}
                         />
                     </div>
                     <section className="m-5 container">
@@ -51,7 +57,7 @@ export default function ResultsMain({ params = [] }) {
 
 /* Take a given array of products, and sort based on sortFn given */
 const getSorted = (prods, { sortFn }) => {
-    if (!sortFn)        return prods
+    if (!sortFn) { return prods }
     return sortFn(prods)
 }
 
@@ -71,32 +77,6 @@ const getFiltered = (prods, filter) => {
     return res
 }
 
-/* Given an array of string search parameters, iterate and find all matching items, then flatten and return */
-const searchProducts = (params) => {
-    let res = []
-    let prod
-    for (let p of params) {
-        prod = searchProduct(p)
-        if (prod) res.push(prod)
-    }
-    // "new Set" removes all duplicate elements
-    return [...new Set(res.flat())]
-}
-
-/* Given a single parameter, find all matching products */
-const searchProduct = (param) => {
-    let res = []
-    for (let p of products){
-        if (p.title.toLowerCase().includes(param.toLowerCase())) {
-            res.push(p)
-            continue
-        }
-        if (p.desc.toLowerCase().includes(param.toLowerCase()))
-            res.push(p)
-    }
-    return (res.length > 0 ? res : null)
-}
-
 /* Takes the final array of products and creates the JSX array to display */
 const getMatchingProducts = (prods) => {
     let i           = 0,
@@ -110,7 +90,7 @@ const getMatchingProducts = (prods) => {
         if (r !== 0 && r % 3 === 0) i++;
 
         resultCards[i].push(
-            <ResultCard pid={prods[r].id} key={r} />
+            <ResultCard product={prods[r]} key={r} />
         )
     }
 

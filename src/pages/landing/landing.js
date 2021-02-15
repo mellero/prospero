@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ResultCard from '../common/resultCard'
 import LandingPanel from './landingPanel'
-import products from '../../../static/productList'
 import '../../../static/fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from 'gatsby'
+import { getLandingProducts } from '../../../static/prosperoDB'
 
 /**
  * Main Landing page. Contains a Hero section and three random products to display under it
  */
 export default function Landing() {
     /* Takes the total number of products and grabs 3 random ids to display under Hero */
-    const n = products.length
-    let ids = []
-    ids = setIDs(ids, n)
+    const [prods, setProds] = useState([])
+    /* Asynchronously get 3 random products from the backend */
+    useEffect(() => {
+        async function getIds() {
+            setProds(await getLandingProducts())
+        }
+        getIds()
+    }, [])
 
     return (
         <main className="pt-3 main-article">
@@ -69,25 +74,13 @@ export default function Landing() {
                     {/* Random Product Display */}
                     <section className="mx-5 my-5 container features">
                         <div className="tile is-ancestor">
-                            <ResultCard pid={ids[0]} />
-                            <ResultCard pid={ids[1]} />
-                            <ResultCard pid={ids[2]} />
+                            <ResultCard product={prods[0]} />
+                            <ResultCard product={prods[1]} />
+                            <ResultCard product={prods[2]} />
                         </div>
                     </section> {/* End Random Product Display */}
                 </div> {/* End Hero Wrapper Div */}
             </div>
         </main >
     )
-}
-
-/* Functions to determine the ids of three random products from product list */
-const randID = (n) => Math.floor(Math.random() * n)
-const setIDs = (arr, n) => {
-    let id = randID(n)
-    for (let i = 0; i < 3; i++) {
-        while (arr.includes(id)) id = randID(n)
-        arr.push(id)
-    }
-    
-    return arr
 }

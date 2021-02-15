@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import products from '../../../static/productList'
+import React, { useEffect, useState } from 'react'
 import Rating from '../common/rating'
 
-export default function ProductInfo({ pid = 0 }) {
-    let product = products[pid]
+export default function ProductInfo({ product = {} }) {
     const [price, setPrice] = useState(product.price)
+    useEffect(() => setPrice(product.price), [product])
+    
     const calcPrice = (e) => setPrice(product.price * e.target.value);
 
     return (
@@ -15,7 +15,7 @@ export default function ProductInfo({ pid = 0 }) {
                 </p>
                 <div className="mb-5 info-desc">
                     <p>
-                        {product.desc}
+                        {product.description}
                     </p>
                 </div>
                 <div className={"info-pqrc"}>

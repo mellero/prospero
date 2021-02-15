@@ -1,5 +1,0 @@
-To Run this project you must:
-1) have node.js installed on your computer
-2) Navigate to this directory and run 'npm install' in order to install all necessary dependencies
-3) Run "gatsby develop" in order to create a server to serve the files
-4) navigate to localhost:8000 to see the page

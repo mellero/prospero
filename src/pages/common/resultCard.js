@@ -1,16 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Rating from './rating'
-import products from '../../../static/productList'
 
 /**
  * A card that holds the information of the product specified. Used in the 
  * landing page under hero, and as the main search results component
  * @param {Number} pid product id of product to display 
  */
-export default function ResultCard({ pid = 0}) {
-    let product = products[pid]
-
+export default function ResultCard({ product = {} }) {
     return (
         <div className="tile is-4 is-parent">
             <div className="tile is-child box">
@@ -18,10 +15,9 @@ export default function ResultCard({ pid = 0}) {
                 <figure className="image is-square">
                     <Link 
                         className="img-link" 
-                        to="/product"
-                        state={{ pid: {pid} }}
+                        to={"/product?id=" + product.id}
                     >
-                        <img src={`../assets/${product.imgURL}`} alt="item" />
+                        <img src={product.imgUrl} alt="item" />
                     </Link>
                 </figure> {/* End Clickable Img */}
                 {/* Product Info */}
@@ -29,8 +25,7 @@ export default function ResultCard({ pid = 0}) {
                     <p className="subtitle card-heading">
                         <Link 
                             className="img-link" 
-                            to="/product"
-                            state={{ pid: {pid} }}
+                            to={"/product?id=" + product.id} 
                         >
                             {product.title}
                         </Link>

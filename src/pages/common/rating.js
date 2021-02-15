@@ -11,8 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
  *  
  */
 export default function Rating({ clName, rating, size = '1x'}) {
-    let solid = <FontAwesomeIcon icon={'star'} size={size} />;
-    let empty = <FontAwesomeIcon icon={['far', 'star']} size={size} />;
+    const solid = <FontAwesomeIcon icon={'star'} size={size} />;
+    const empty = <FontAwesomeIcon icon={['far', 'star']} size={size} />;
 
     return (
         <div className={clName}>

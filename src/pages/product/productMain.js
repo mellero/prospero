@@ -2,12 +2,9 @@ import React from 'react'
 import '../../../static/fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ProductInfo from './productInfo'
-import products from '../../../static/productList'
 import { navigate } from 'gatsby'
 
-export default function ProductMain({ pid = 0 }) {
-    let product = products[pid]
-
+export default function ProductMain({ product = {} }) {
     return (
         <main className="pt-3 main-article">
             <section className="hero">
@@ -22,31 +19,31 @@ export default function ProductMain({ pid = 0 }) {
                         <div className="mb-0 box img-section">
                             <div className="product-img-container container">
                                 <figure className="image is-square">
-                                    <img alt={product.title} src={`../assets/${product.imgURL}`} />
+                                    <img alt={product.title} src={product.imgUrl} />
                                 </figure>
                             </div>
                         </div>
                         <div className="product-thumbs box">
                             <div className="thumbs-container container">
-                                <a className="thumb-link" href="javascript:;">
+                                <a className="thumb-link" href="#">
                                     <figure className="thumb is-square">
-                                        <img alt={product.title} src={`../../assets/${product.imgURL}`} />
+                                        <img alt={product.title} src={product.imgUrl} />
                                     </figure>
                                 </a>
-                                <a className="thumb-link" href="javascript:;">
+                                <a className="thumb-link" href="#">
                                     <figure className="thumb is-square">
-                                        <img alt={product.title} src={`../../assets/${product.imgURL}`} />
+                                        <img alt={product.title} src={product.imgUrl} />
                                     </figure>
                                 </a>
-                                <a className="thumb-link" href="javascript:;">
+                                <a className="thumb-link" href="#">
                                     <figure className="thumb is-square">
-                                        <img alt={product.title} src={`../../assets/${product.imgURL}`} />
+                                        <img alt={product.title} src={product.imgUrl} />
                                     </figure>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <ProductInfo pid={pid} />
+                    <ProductInfo product={product} />
                 </div>
             </section>
         </main>

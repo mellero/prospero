@@ -16,7 +16,9 @@ import {
     // Product
     faLongArrowAltLeft,
     // Sort Bar
-    faAngleDown
+    faAngleDown,
+    // Upload
+    faUpload
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons'
@@ -30,5 +32,6 @@ library.add(
     faChevronRight, faChevronLeft,
     faLongArrowAltLeft,
     faAngleDown,
+    faUpload,
     faTwitter, faInstagram, faLinkedin
 )

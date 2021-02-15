@@ -10,19 +10,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
  */
 export default function Header({ searchParams }) {
     /* Sets state to either an empty string or whatever was searched for */
-    const [search, setSearch] = useState('' || searchParams)
+    const [search, setSearch] = useState(!searchParams ? '' : searchParams)
     /* Two-way binding for search input box */
     const changeHandler = (e) => {
         setSearch(e.target.value)
     }
-    /* A string to allow for cleaner URL when search is blank */
-    const resultsParamString = search ? '/results?' + search : '/results'
+    
     /* Handles 'enter' functionality for the search bar */
     const enterHandler = (e) => {
         if (e.key === 'Enter') {
-            navigate(resultsParamString, { 
-                state: { search: search } 
-            })
+            let paramString = search ? '/results?' + search : '/results'
+            navigate(paramString)
         }
     }
 
@@ -45,7 +43,7 @@ export default function Header({ searchParams }) {
                             <Link className="navbar-item" to="#about">
                                 About
                             </Link>
-                            <Link className="navbar-item" to="#">
+                            <Link className="navbar-item" to="/addproduct">
                                 Products
                             </Link>
                             <Link className="navbar-item" to="#">
@@ -70,8 +68,7 @@ export default function Header({ searchParams }) {
                                     <p className="control" id="search-icon">
                                         <Link 
                                             className="button" 
-                                            to={resultsParamString}
-                                            state={{ search: search }}
+                                            to={search ? '/results?' + search : '/results'}
                                         >
                                             <FontAwesomeIcon icon={'search'} />
                                         </Link>

@@ -56,25 +56,25 @@ export default function SortBar({ changeSortFn, numResults }) {
                 {/* Pagination */}
                 <div className="level-right">
                     <nav className="pagination is-centered is-small is-rounded" role="navigation" aria-label="pagination">
-                        <a className="pages pagination-previous" href="javascript:;">
+                        <a className="pages pagination-previous" href="#">
                             <FontAwesomeIcon icon='chevron-left' />
                         </a>
-                        <a className="pages pagination-next" href="javascript:;">
+                        <a className="pages pagination-next" href="#">
                             <FontAwesomeIcon icon='chevron-right' />
                         </a>
                         <ul className="pagination-list">
                             <li>
-                                <a className="pages pagination-link is-current" aria-label="Goto page 1" href="javascript:;">
+                                <a className="pages pagination-link is-current" aria-label="Goto page 1" href="#">
                                     1
                                 </a>
                             </li>
                             <li>
-                                <a className="pages pagination-link" aria-label="Goto page 2" href="javascript:;">
+                                <a className="pages pagination-link" aria-label="Goto page 2" href="#">
                                     2
                                 </a>
                             </li>
                             <li>
-                                <a className="pages pagination-link" aria-label="Goto page 3" href="javascript:;">
+                                <a className="pages pagination-link" aria-label="Goto page 3" href="#">
                                     3
                                 </a>
                             </li>
@@ -82,7 +82,7 @@ export default function SortBar({ changeSortFn, numResults }) {
                                 <span className="pages pagination-ellipsis">&hellip;</span>
                             </li>
                             <li>
-                                <a className="pages pagination-link" aria-label="Goto page 6" href="javascript:;">
+                                <a className="pages pagination-link" aria-label="Goto page 6" href="#">
                                     6
                                 </a>
                             </li>
