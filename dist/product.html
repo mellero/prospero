@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- 
+* Item title
+* Item image(s)
+* Item price
+* Item description
+* Quantity selector
+* Add to Cart button
+* Rating
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Warhammer Leather Journal</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <base href="file:///C:/Users/Matt/Desktop/Materials/lvl-2/web-dev-cst8285/assignment/part1/dist/"/>
+    <!-- <base href="file:///media/fuse/crostini_a22254bdc7304453561f5eea1dbd45b382bab2e7_termina_penguin/js/school/webdev-project/part1/dist/" /> -->
+    <!-- Citations: 
+    * Two main design inspirations for this site:
+    *       games-workshop.com
+    *       joinedandjointed.com
+    * Bulma.io used as a framework, with many layout designs and component designs
+    *    based on those provided by Bulma
+    * Icons come from FontAwesome
+    * Journal picture from games-workshop
+    * Landing Hero picture from Wizards of the coast
+    *
+    ** All work done by Matt Ellero
+    -->
+</head><body>
+    <header>
+<div class="fixed">
+    <!-- Nav -->
+    <nav class="navbar is-fixed-top is-dark">
+        <!-- ** Based on Bulma navbar ** -->
+        <!-- Brand -->
+        <div class="navbar-brand brand">
+            <a class="navbar-item" href="landing.html">
+                <i class="pr-2 fas fa-dungeon" alt="Dungeon Icon"></i>
+                <p class="mx-3 is-uppercase">
+                    prospero
+                </p>
+            </a>
+        </div> <!-- End Brand -->
+        <!-- Navbar Menu -->
+        <div class="navbar-menu" id="nav-menu">
+            <!-- Navbar-Start -->
+            <div class="navbar-start">
+                <a class="navbar-item" href="about">
+                    About
+                </a>
+                <a class="navbar-item" href="products">
+                    Products
+                </a>
+                <a class="navbar-item" href="contact">
+                    Contact Us
+                </a>
+            </div> <!-- End Navbar-Start -->
+            <!-- Navbar-End -->
+            <div class="ml-3 navbar-end is-dark">
+                <!-- Nav-Search -->
+                <div class="navbar-item">
+                    <div class="field has-addons">
+                        <!-- Container for search input and icon/button -->
+                        <p class="control">
+                            <input 
+                                class="input" 
+                                id="search-bar" 
+                                type="text" 
+                                placeholder="Search for products"
+                            >
+                        </p>
+                        <p class="control" id="search-icon">
+                            <a class="button" href="results.html">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div> <!-- End Nav-Search -->
+                <a class="navbar-item px-5" href="/cart">
+                    <i class="pr-2 fas fa-shopping-cart"></i>
+                    <span>(0)</span>
+                </a>
+                <a class="navbar-item" id="login">
+                    Log in
+                </a>
+                <a class="navbar-item" id="signup">
+                    Sign up
+                </a>
+            </div> <!-- End Navbar-End -->
+        </div> <!-- End Navbar Menu -->
+    </nav> <!-- End Nav -->
+</div>    </header>
+    <!-- Results Welcome Dungeon -->
+    <section class="p-3 section welcome">
+        <div class="level">
+            <div class="level-item">
+                <div class="ml-5">
+                    <i class="fas fa-5x fa-dungeon" alt="Dungeon Icon"></i>
+                </div>
+            </div>
+        </div>
+    </section> <!-- End Results Welcome Dungeon -->
+    <!-- Main Section -->
+    <main class="main-article">
+        <section class="hero">
+            <!-- Return Link -->
+            <div class="pl-3 my-2 return-results">
+                <a class="" href="results.html">
+                    <i class="fas fa-long-arrow-alt-left fa-xs"></i>
+                    return to results
+                </a>
+            </div> <!-- End Return Link -->
+            <!-- Hero Container -->
+            <div class="hero-container">
+                <!-- Hero Display -->
+                <div class="pt-0 hero-body product-container">
+                    <!-- Product Image -->
+                    <div class="mb-0 box img-section">
+                        <div class="product-img-container container">
+                            <figure class="image is-square">
+                                <img src=../assets/journal.webp />
+                            </figure>
+                        </div>
+                    </div> <!-- End Product Image -->
+                    <!-- Thumbs -->
+                    <div class="product-thumbs box">
+                        <div class="thumbs-container container">
+                            <a class="thumb-link">
+                                <figure class="thumb is-square">
+                                    <img src=../assets/journal.webp />
+                                </figure>
+                            </a>
+                            <a class="thumb-link">
+                                <figure class="thumb is-square">
+                                    <img src=../assets/journal.webp />
+                                </figure>
+                            </a>
+                            <a class="thumb-link">
+                                <figure class="thumb is-square">
+                                    <img src=../assets/journal.webp />
+                                </figure>
+                            </a>
+                        </div>
+                    </div> <!-- End Thumbs -->
+                </div> <!-- End Hero Display -->
+                <!-- Product Info -->
+                <div class="mr-5 product-info box">
+                    <div class="info">
+                        <p class="subtitle info-title">
+                            <a class="img-link">
+                                Warhammer Leather Journal
+                            </a>
+                        </p>
+                        <div class="mb-5 info-desc">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc eleifend purus non dolor viverra, non tincidunt quam
+                                tincidunt. Aenean eleifend aliquam molestie. Vivamus eget
+                                lorem ut mi sollicitudin tincidunt quis eu tellus
+                            </p>
+                        </div>
+                        <div class="info-rating">
+                            <i class="fas fa-star fa-xs"></i>
+                            <i class="fas fa-star fa-xs"></i>
+                            <i class="fas fa-star fa-xs"></i>
+                            <i class="fas fa-star fa-xs"></i>
+                            <i class="far fa-star fa-xs"></i>
+                        </div>
+                        <div class="info-cart">
+                            <div class="info-cart">
+                                <a class="button add-to-cart">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="info-price">
+                            <p class="subtitle card-price">
+                                $60
+                            </p>
+                        </div>
+                        <div class="info-quantity">
+                            <p class="pr-2">
+                                Quantity:
+                            </p>
+                            <div class="select">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Product Info -->
+            </div> <!-- End Hero Container -->
+        </section>
+    </main> <!-- End Main Section -->
+<!-- Footer -->
+<footer class="footer is-light">
+    <!-- Columns Container -->
+    <div class="columns is-centered">
+        <!-- About Blurb -->
+        <div class="column is-one-third">
+            <hr>
+            <h1 class="content is-medium is-uppercase has-text-weight-bold brand">
+                prospero gaming
+            </h1>
+            <p class="content is-small is-uppercase">
+                established 1993
+                <br>
+                ottawa, ontario, canada. 
+                <br><br>
+                Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit. Aenean tempor ac odio id varius. Vestibulum ante 
+                ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut quis 
+                pharetra augue. Ut finibus mauris eget dolor facilisis, in efficitur felis consequat. 
+                In non lacus rutrum, volutpat neque sed, convallis metus.
+            </p>
+        </div> <!-- End About Blurb -->
+        <!-- Contact Info -->
+        <div class="column is-one-third">
+            <hr>
+            <h1 class="content is-medium is-uppercase has-text-weight-bold brand">
+                contact us
+            </h1>
+            <p class="content is-small is-uppercase">
+                1385 Woodroffe Avenue
+                <br>
+                Ottawa, Ontario
+                <br>
+                Canada
+                <br>
+                K2G 1V8
+                <br>
+                Phone number: (613) 727-4723 ext 5482
+                <br><br>
+                <a href="mailto: info@prosperogaming.ca">
+                    Email: info@prosperogaming.ca
+                </a>
+            </p>
+        </div> <!-- End Contact Info -->
+        <!-- Socials -->
+        <div class="column is-one-third">
+            <hr>
+            <h1 class="content is-medium is-uppercase has-text-weight-bold brand">
+                Follow us
+            </h1>
+            <ul class="content">
+                <li>
+                    <a class="content" href="/something">
+                        <i class="pr-1 fab fa-instagram"></i>
+                        instagram
+                    </a>
+                </li>
+                <li>
+                    <a class="content" href="/something">
+                        <i class="pr-1 fab fa-linkedin"></i>
+                        linkedin
+                    </a>
+                </li>
+                <li>
+                    <a class="content" href="/something">
+                        <i class="pr-1 fab fa-twitter"></i>
+                        twitter
+                    </a>
+                </li>
+                <li>
+                    <a class="content brand is-uppercase" href="/something">
+                        <i class="pr-1 fas fa-dungeon" alt="Dungeon Blog"></i>
+                        prospero blog
+                    </a>
+                </li>
+            </ul>
+        </div> <!-- End Socials -->
+    </div> <!-- End Columns Container -->
+</footer> <!-- End Footer --></body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+•	Title & Logo
+•	Search bar
+•	Featured products
+•	Links to product categories (e.g. Clothing, Technology, Tools, Toys, etc.)
+•	Anything else you would like that makes the page more full and complete
+ -->
+
+<html>
+${head}
+<body>
+    <header>
+        ${nav}
+    </header>
+    <!-- Landing Page Welcome -->
+    <section class="p-3 mb-3 section welcome">
+        <div class="level">
+            <div class="level-item">
+                <div class="mr-5">
+                    <p class="title brand">
+                        Prospero Gaming
+                    </p>
+                    <p class="heading">
+                        Selling nerd crap since 1993
+                    </p>    
+                </div>
+                <div class="ml-5">
+                    <i class="fas fa-5x fa-dungeon" alt="Dungeon Icon"></i>
+                </div>
+            </div>
+        </div> 
+    </section> <!-- End Landing Page Welcome -->
+    <!-- Main Section -->
+    <main class="main-article">
+        <div class="columns">
+            <div class="pt-0 column is-3">
+                ${panel}
+            </div>
+            <!-- Showcase -->
+            <div class="mr-3 column">
+                <!-- Hero Container -->
+                <article class="hero">
+                    <section class="hero-body">
+                        <!-- Hero Title -->
+                        <div class="container box">
+                            <a class="title-click">
+                                <h1 class="title">
+                                    Tasha's Cauldron of Everything
+                                </h1>
+                                <h1 class="subtitle">
+                                    Coming November 17!
+                                </h1>
+                            </a>
+                        </div> <!-- End Hero Title -->
+                        <!-- Hero Image -->
+                        <div class="container">
+                            <div class="tile is-ancestor">
+                                <div class="tile is-12 is-parent box hero-image-container">
+                                    <!-- Left Chevron -->
+                                    <div class="mr-2 hero-arrow hero-left-arrow">
+                                        <a>
+                                            <i class="fas fa-chevron-left fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <figure class="image is-fullwidth">
+                                        <a class="img-click">
+                                            <img
+                                                class="tile is-12"
+                                                src="https://media.dnd.wizards.com/TCoE_Gallery_Thumb_0.jpg"
+                                                alt="Wizard casting a spell from a book"
+                                            />
+                                        </a>
+                                    </figure>
+                                    <!-- Right Chevron -->
+                                    <div class="ml-2 hero-arrow hero-right-arrow">
+                                        <a>
+                                            <i class="fas fa-chevron-right fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  <!-- End Hero Image -->
+                    </section>
+                </article> <!-- End Hero Container -->
+                 <!-- Feature Tiles -->
+                <section class="mx-5 my-5 container features">
+                    <div class="tile is-ancestor">
+                            ${result-card} 
+							${result-card} 
+							${result-card}
+                        </div>
+                    </div>
+                </section> <!-- End Feature Tiles -->
+            </div> <!-- End Showcase -->
+        </div>
+    </main> <!-- End Main Section -->
+    ${footer}
+</body>
+</html>

@@ -1,0 +1,102 @@
+/************* PRODUCTS *****************/
+
+/* ============== HERO ================ */
+.return-results a {
+    color: $color-off-white;
+    text-decoration: none;
+}
+
+.hero .hero-container {
+    display: inline-grid;
+    grid-template-columns: 6fr 3fr;
+}
+
+.product-container {
+    display: grid;
+    grid-template-areas: 
+        "img    img"
+        "img    img"
+        "thumbs thumbs";
+    grid-gap: 1em;
+} 
+
+.img-section {
+    grid-area: img;
+}
+
+.product-img-container {
+    width: 80%;
+}
+
+.product-thumbs {
+    grid-area: thumbs;
+}
+
+.thumbs-container {
+    display: inline-flex;
+}
+
+.thumb {
+    margin: 2em;
+
+    img {
+        object-fit: contain;
+        width: 5em;
+        height: 5em;
+    }
+}
+
+.thumb-link {
+    margin: 0 0.5em;
+}
+
+.product-info {
+    max-height: 35%;
+}
+
+.info {
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template-areas: 
+        "title title title"
+        "desc desc ."
+        "desc desc rating"
+        "price quantity cart";
+}
+
+.info-title {
+    grid-area: title;
+    justify-self: center;
+    font-weight: 700;
+}
+
+.info-desc {
+    grid-area: desc;
+}
+
+.info-rating {
+    grid-area: rating;
+}
+
+.info-cart {
+    grid-area: cart;
+}
+
+.info-price {
+    align-self: center;
+    grid-area: price;
+}
+
+.info-quantity {
+    align-items: center;
+    display: flex;
+    grid-area: quantity;
+
+    // Adjusts the color for the quantity arrow
+    .select:not(.is-multiple):not(.is-loading)::after {
+        border-color: $color-primary;
+    }
+}
+
+/* ============ END HERO ============== */
+/*********** END PRODUCTS ***************/

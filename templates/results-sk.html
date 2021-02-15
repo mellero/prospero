@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+* Search bar
+* Listed products with image, title, price, and ratings
+* An area that lets you filter products by price and ratings
+* An area that lets you sort by price from lowest to highest and vice versa
+ -->
+
+<html>
+${head}
+
+<body>
+    <header>
+        ${nav}
+    </header>
+    <!-- Results Welcome Dungeon -->
+    <section class="p-3 mb-3 section welcome">
+        <div class="level">
+            <div class="level-item">
+                <div class="ml-5">
+                    <i class="fas fa-5x fa-dungeon" alt="Dungeon Icon"></i>
+                </div>
+            </div>
+        </div>
+    </section> <!-- End Results Welcome Dungeon -->
+    <!-- Main Section -->
+    <main class="main-article">
+        <div class="columns">
+            <div class="pt-0 column is-3">
+                ${results-panel}
+            </div>
+            <!-- Showcase -->
+            <div class="mr-3 showcase-results column">
+                <div class="p-3 block sort-bar-container">
+                    ${sort-bar}
+                </div>
+                <!-- Product Tiles -->
+                <section class="m-5 container">
+                    <!-- Row 1 / 3-->
+                    <div class="tile is-ancestor">
+                        ${result-card}
+                        ${result-card}
+                        ${result-card}
+                    </div> <!-- End Row 1 -->
+                    <!-- Row 2 / 3-->
+                    <div class="tile is-ancestor">
+                        ${result-card}
+                        ${result-card}
+                        ${result-card}
+                    </div> <!-- End Row 2-->
+                    <!-- Row 3 / 3-->
+                    <div class="tile is-ancestor">
+                        ${result-card}
+                        ${result-card}
+                        ${result-card}
+                    </div> <!-- End Row 3-->
+                </section> <!-- End Product Tiles -->
+                <div class="block"></div> <!-- Empty Spacing Block -->
+                <div class="p-3 mb-2 block sort-bar-container">
+                    ${sort-bar}
+                </div>
+            </div> <!-- End Showcase -->
+        </div>
+    </main> <!-- End Main Section -->
+    ${footer}
+</body>
+
+</html>
